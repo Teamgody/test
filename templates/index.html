@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI แยกชนิดขยะ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+
+  </head>
+  <body>
+    <div class="container">
+      <h1>อัปโหลดภาพเพื่อให้AI แยกชนิดขยะ</h1>
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+      </form>
+
+      {% if result %}
+        <h2 class="result">Prediction: {{ result }}</h2>
+        <img src="{{ image }}" alt="Uploaded Image">
+      {% endif %}
+    </div>
+  </body>
+</html>
